@@ -1,0 +1,15 @@
+{
+  "name": "euler-solution",
+  "version": "1.0.0",
+  "description": "Auto compiled Website for Solution of Project Euler from markdown file",
+  "main": "app.js",
+  "scripts": {
+    "build": "node app.js"
+  },
+  "author": "manish",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^9.0.0",
+    "marked": "^1.1.0"
+  }
+}
