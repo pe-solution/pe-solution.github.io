@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sum of Divisor of 3 and 5</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+    <script>
+    	hljs.initHighlightingOnLoad() 
+    </script>
+</head>
+<body>
+	<div id="app" class="card">
+		<nav class="card">
+			<h1><a href="/">Project Euler Solution</a></h1>
+		</nav>
+		<section>
+			<div class="content">
+				<h2 id="problem-1--sum-of-divisor-of-3-and-5">Problem 1 : Sum of Divisor of 3 and 5</h2>
+<h2 id="algorithm">Algorithm</h2>
+<p>Iterate over all multiple of 3 and 5 and populate it in a variable</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+#define n 1000
+int main(){
+    int i=3,sum=0;
+    while(i&lt;=1000){
+        sum += i;
+        i+=3;
+    }
+    for(i=5; i&lt;= n; i+=5){
+        sum += i;
+    }
+    for(i=15; i&lt;=n; i+=15){
+        sum -= i;
+    }
+    cout &lt;&lt; sum;
+    return 0;
+}</code></pre>
+<h2 id="analysis">Analysis</h2>
+<p>Time Complexity : O(n)<br>Space Complexity : O(1)</p>
+<h2 id="reference">Reference</h2>
+<p><a href="https://www.hackerrank.com/contests/projecteuler/challenges/euler001/problem">hackerrank</a></p>
+
+			</div>
+		</section>
+		<footer>
+			<h3><a href="https://github.com/pe-solution/pe-solution.github.io">Contribute</a></h3>
+		</footer>
+	</div>
+</body>
+</html>
