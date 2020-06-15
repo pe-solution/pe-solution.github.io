@@ -3,7 +3,7 @@ class Logger{
         
     }
 
-    log(msg){
+    log(...msg){
         const now = new Date().toLocaleDateString(
             'en-US',
             {

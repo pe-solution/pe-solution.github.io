@@ -9,7 +9,7 @@ const srcDir = path.resolve(__dirname, "src")
 const targetDir = path.resolve(__dirname, "dist")
 
 
-const processFile = (err, file) => {
+const processFile = (err, file, template) => {
     // logger.log(`file processed ${file}`)
     if(err){
         logger.log(err)
@@ -23,7 +23,7 @@ const processFile = (err, file) => {
     // logger.log(destPath)
     if(ext === '.md'){
         // build html from template and .md file
-        const html = HTML(file)
+        const html = HTML(file, template)
 
         // write file to dist as structured in src
         myfs.writeFile(destPath.replace('.md', '.html'), html)

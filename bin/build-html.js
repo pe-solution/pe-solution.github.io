@@ -11,8 +11,14 @@ let template = fs.readFileSync('bin/template.html', 'utf-8')
 module.exports = (file, temp) => {
     if(temp){
         template = temp
+        // console.log(temp)
     }
     const data = fs.readFileSync(file, 'utf-8')
-    const fileHtml = marked(data)
-    return template.replace("$CONTENT", fileHtml)
+    const [meta, mdData] = data.split('$__')
+    // console.log('meta', meta)
+    const head = JSON.parse(meta) 
+    // console.log('head', head)
+    // console.log('mdata', mdData)
+    const fileHtml = marked(mdData)
+    return template.replace("$TITLE", head.title).replace("$CONTENT", fileHtml)
 }

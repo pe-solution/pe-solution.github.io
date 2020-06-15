@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "node app.js",
-    "dev": "node dev.js & node node_modules/http-server/bin/http-server dist"
+    "dev": "nodemon --ignore 'dist/' dev.js & node node_modules/http-server/bin/http-server dist"
   },
   "author": "manish",
   "license": "ISC",
