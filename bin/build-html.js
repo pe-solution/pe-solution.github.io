@@ -2,6 +2,12 @@ const fs = require('fs')
 const marked = require('marked')
 let template = fs.readFileSync('bin/template.html', 'utf-8')
 
+/**
+ * 
+ * @param {string} file path to .md file want to convert into html markup
+ * @param {string} temp template for making html file from md. use $CONTENT to replace with md file
+ * @returns {string} combined converted html snippet
+ */
 module.exports = (file, temp) => {
     if(temp){
         template = temp

@@ -27,6 +27,7 @@ const walk = async (dir, cb) => {
         })
 
     }
+    return true
 
 }
 

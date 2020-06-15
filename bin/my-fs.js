@@ -1,8 +1,8 @@
 const fs = require('fs-extra')
 const logger = require('./logger')
 /**
- * @param dir:string 
- * 
+ * @param {string} dir path to directory 
+ * @returns {Promise<string[]>} paths to all directory and files
  */
 module.exports.readdir = async (dir) => {
 	return new Promise((resolve, reject) => {

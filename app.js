@@ -2,11 +2,12 @@
 const path = require('path')
 const walk = require('./bin/walk')
 const logger = require('./bin/logger')
-const HTML = require('./bin/buld-html')
+const HTML = require('./bin/build-html')
 const myfs = require('./bin/my-fs')
 
 const srcDir = path.resolve(__dirname, "src")
 const targetDir = path.resolve(__dirname, "dist")
+
 
 const processFile = (err, file) => {
     // logger.log(`file processed ${file}`)
@@ -35,6 +36,18 @@ const processFile = (err, file) => {
 }
 // console.time('Build Finished ')
 
-// walk through the all files in directory and using callback to perform some action on file
-walk(srcDir, processFile)
+let flag = false;
+async function run(){
+    // walk through the all files in directory and using callback to perform some action on file
+    flag = await walk(srcDir, processFile)
+}
+run()
+
 // console.timeEnd('Build Finished ')
+
+// while(!flag);
+
+module.exports = {
+    srcDir: srcDir,
+    processFile: processFile
+}

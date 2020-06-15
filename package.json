@@ -4,12 +4,17 @@
   "description": "Auto compiled Website for Solution of Project Euler from markdown file",
   "main": "app.js",
   "scripts": {
-    "build": "node app.js"
+    "build": "node app.js",
+    "dev": "node dev.js & node node_modules/http-server/bin/http-server dist"
   },
   "author": "manish",
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.0",
+    "http-server": "^0.12.3",
     "marked": "^1.1.0"
+  },
+  "devDependencies": {
+    "chokidar": "^3.4.0"
   }
 }
