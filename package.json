@@ -12,7 +12,7 @@
   "dependencies": {
     "fs-extra": "^9.0.0",
     "http-server": "^0.12.3",
-    "marked": "^1.1.0"
+    "marked": "^4.0.10"
   },
   "devDependencies": {
     "chokidar": "^3.4.0"
